@@ -117,7 +117,7 @@ public void logout() throws ServletException, IOException {
     //ログイン画面にリダイレクト
     redirect(ForwardConst.ACT_AUTH, ForwardConst.CMD_SHOW_LOGIN);
 
-}
+    }
 
 }
 
