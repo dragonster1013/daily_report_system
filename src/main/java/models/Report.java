@@ -44,7 +44,7 @@ import lombok.Setter;
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
 @Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
 @NoArgsConstructor //引数なしコンストラクタを自動生成する(Lombok)
-@AllArgsConstructor //全てのクラスフィールドに引数にもつ引数ありコンストラクタ自動生成する(Lombok)
+@AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
 @Entity
 public class Report {
 
@@ -72,13 +72,19 @@ public class Report {
     /**
      * 日報のタイトル
      */
-    @Column(name = JpaConst.REP_COL_TITLE, length = 225, nullable = false)
+    @Column(name = JpaConst.REP_COL_TITLE, length = 255, nullable = false)
     private String title;
 
     /**
      * 日報の内容
      */
     @Lob
+    @Column(name = JpaConst.REP_COL_CONTENT, nullable = false)
+    private String content;
+
+    /**
+     * 登録日時
+     */
     @Column(name = JpaConst.REP_COL_CREATED_AT, nullable = false)
     private LocalDateTime createdAt;
 
