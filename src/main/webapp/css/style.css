@@ -70,6 +70,26 @@ button {
     text-align: center;
 }
 
+#flush_success{
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom: 28px;
+    margin-bottom: 15px;
+    color: #155724;
+    background-color: #d4edda;
+}
+
+#flush_error{
+    width: 100%;
+    padding-top: 28px;
+    padding-left: 2%;
+    padding-bottom:28px;
+    margin-bottom: 15px;
+    color: #721c24;
+    background-color: #f8d7da
+}
+
 table#employee_list th {
     width: 30%;
     padding: 10px 2%;
@@ -114,3 +134,31 @@ h1 a {
     color: #eeeeee;
 }
 
+table#report_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#report_list .report_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#report_list .report_date {
+    width: 20%;
+}
+
+table#report_list .report_title {
+    width: 37%;
+}
+
+table#report_list .report_action {
+    width: 13%;
+}
+
+pre {
+    font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
+}
+
+h3 {
+    font-size: larger;
+}
