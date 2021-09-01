@@ -40,16 +40,27 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
+    //確認テーブル
+    String TABLE_CHECK = "checks"; //テーブル名
+    //確認テーブルカラム
+    String CHE_COL_ID = "id"; //id
+    String CHE_COL_REP = "report_id"; //作成された日報のid
+    String CHE_COL_CONFIRM = "confirm"; //確認サイン
+    String CHE_COL_CREATED_AT = "created_at"; //登録日時
+    String CHE_COL_UPDATED_AT = "updated_at"; //更新日時
+
+
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
+    String ENTITY_CHE = "check"; //確認サイン
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号
     String JPQL_PARM_PASSWORD = "password"; //パスワード
     String JPQL_PARM_EMPLOYEE = "employee"; //従業員
 
-    //NamedQueryの nameとquery
+    //employeeのNamedQueryのnameとquery
     //全ての従業員をidの降順に取得する
     String Q_EMP_GET_ALL = ENTITY_EMP + ".getAll"; //name
     String Q_EMP_GET_ALL_DEF = "SELECT e FROM Employee AS e ORDER BY e.id DESC"; //query
@@ -62,6 +73,8 @@ public interface JpaConst {
     //指定した社員番号を保持する従業員の件数を取得する
     String Q_EMP_COUNT_RESISTERED_BY_CODE = ENTITY_EMP + ".countRegisteredByCode";
     String Q_EMP_COUNT_RESISTERED_BY_CODE_DEF = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :" + JPQL_PARM_CODE;
+
+    //reportのNamedQueryのnameとquery
     //全ての日報をidの降順に取得する
     String Q_REP_GET_ALL = ENTITY_REP + ".getAll";
     String Q_REP_GET_ALL_DEF = "SELECT r FROM Report AS r ORDER BY r.id DESC";
@@ -74,5 +87,13 @@ public interface JpaConst {
     //指定した従業員が作成した日報の件数を取得する
     String Q_REP_COUNT_ALL_MINE = ENTITY_REP + ".countAllMine";
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
+
+    //checkのNamedQueryのnameとquery
+    //全ての日報をidの降順に取得する
+    String Q_CHE_GET_ALL = ENTITY_REP + ".getAll";
+    String Q_CHE_GET_ALL_DEF = "SELECT c FROM Report AS c ORDER BY c.id DESC";
+    //全ての日報の件数を取得する
+    String Q_CHE_COUNT = ENTITY_REP + ".count";
+    String Q_CHE_COUNT_DEF = "SELECT COUNT(c) FROM Report AS c";
 
 }
