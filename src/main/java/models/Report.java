@@ -94,4 +94,10 @@ public class Report {
     @Column(name = JpaConst.REP_COL_UPDATED_AT, nullable = false)
     private LocalDateTime updatedAt;
 
+    /**
+     * 評価
+     */
+    @Column(name = JpaConst.REP_COL_REVIEW, nullable = false)
+    private String review;
+
 }
