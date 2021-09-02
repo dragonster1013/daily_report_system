@@ -41,7 +41,7 @@ public interface JpaConst {
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
     //確認テーブル
-    String TABLE_CHECK = "checks"; //テーブル名
+    String TABLE_CHE = "checks"; //テーブル名
     //確認テーブルカラム
     String CHE_COL_ID = "id"; //id
     String CHE_COL_REP = "report_id"; //作成された日報のid
@@ -59,6 +59,7 @@ public interface JpaConst {
     String JPQL_PARM_CODE = "code"; //社員番号
     String JPQL_PARM_PASSWORD = "password"; //パスワード
     String JPQL_PARM_EMPLOYEE = "employee"; //従業員
+    String JPQL_PARM_REPORT = "report"; //日報
 
     //employeeのNamedQueryのnameとquery
     //全ての従業員をidの降順に取得する
@@ -89,11 +90,17 @@ public interface JpaConst {
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
 
     //checkのNamedQueryのnameとquery
-    //全ての日報をidの降順に取得する
-    String Q_CHE_GET_ALL = ENTITY_REP + ".getAll";
-    String Q_CHE_GET_ALL_DEF = "SELECT c FROM Report AS c ORDER BY c.id DESC";
-    //全ての日報の件数を取得する
-    String Q_CHE_COUNT = ENTITY_REP + ".count";
-    String Q_CHE_COUNT_DEF = "SELECT COUNT(c) FROM Report AS c";
+    //全ての確認サインをidの降順に取得する
+    String Q_CHE_GET_ALL = ENTITY_CHE + ".getAll";
+    String Q_CHE_GET_ALL_DEF = "SELECT c FROM Check AS c ORDER BY c.id DESC";
+    //全ての確認サインの件数を取得する
+    String Q_CHE_COUNT = ENTITY_CHE + ".count";
+    String Q_CHE_COUNT_DEF = "SELECT COUNT(c) FROM Check AS c";
+    //指定した日報にした確認サインを全件idの降順で取得する
+    String Q_CHE_GET_ALL_MINE = ENTITY_CHE + ".getAllMine";
+    String Q_CHE_GET_ALL_MINE_DEF = "SELECT c FROM Check AS c WHERE c.check = :" + JPQL_PARM_REPORT + " ORDER BY c.id DESC";
+  //指定した日報にした確認サインの件数を取得する
+    String Q_CHE_COUNT_ALL_MINE = ENTITY_CHE + ".countAllMine";
+    String Q_CHE_COUNT_ALL_MINE_DEF = "SELECT COUNT(c) FROM Check AS c WHERE c.report = :" + JPQL_PARM_REPORT;
 
 }
