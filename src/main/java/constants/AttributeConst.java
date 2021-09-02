@@ -48,14 +48,7 @@ public enum AttributeConst {
     REP_ID("id"),
     REP_DATE("report_date"),
     REP_TITLE("title"),
-    REP_CONTENT("content"),
-
-    //内容管理
-    CHECK("check"),
-    CHECKS("checks"),
-    CHE_COUNT("check_count"),
-    CHE_ID("id"),
-    CHE_CONFIRM("confirm");
+    REP_CONTENT("content");
 
     private final String text;
     private final Integer i;

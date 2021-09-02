@@ -40,6 +40,7 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
+<<<<<<< main
     //確認テーブル
     String TABLE_CHE = "checks"; //テーブル名
     //確認テーブルカラム
@@ -50,10 +51,11 @@ public interface JpaConst {
     String CHE_COL_UPDATED_AT = "updated_at"; //更新日時
 
 
+=======
+>>>>>>> 6cf8195 定数ファイルを作成
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
-    String ENTITY_CHE = "check"; //確認サイン
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号
@@ -61,7 +63,7 @@ public interface JpaConst {
     String JPQL_PARM_EMPLOYEE = "employee"; //従業員
     String JPQL_PARM_REPORT = "report"; //日報
 
-    //employeeのNamedQueryのnameとquery
+    //NamedQueryの nameとquery
     //全ての従業員をidの降順に取得する
     String Q_EMP_GET_ALL = ENTITY_EMP + ".getAll"; //name
     String Q_EMP_GET_ALL_DEF = "SELECT e FROM Employee AS e ORDER BY e.id DESC"; //query
@@ -74,8 +76,6 @@ public interface JpaConst {
     //指定した社員番号を保持する従業員の件数を取得する
     String Q_EMP_COUNT_RESISTERED_BY_CODE = ENTITY_EMP + ".countRegisteredByCode";
     String Q_EMP_COUNT_RESISTERED_BY_CODE_DEF = "SELECT COUNT(e) FROM Employee AS e WHERE e.code = :" + JPQL_PARM_CODE;
-
-    //reportのNamedQueryのnameとquery
     //全ての日報をidの降順に取得する
     String Q_REP_GET_ALL = ENTITY_REP + ".getAll";
     String Q_REP_GET_ALL_DEF = "SELECT r FROM Report AS r ORDER BY r.id DESC";
@@ -89,6 +89,7 @@ public interface JpaConst {
     String Q_REP_COUNT_ALL_MINE = ENTITY_REP + ".countAllMine";
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
 
+<<<<<<< main
     //checkのNamedQueryのnameとquery
     //全ての確認サインをidの降順に取得する
     String Q_CHE_GET_ALL = ENTITY_CHE + ".getAll";
@@ -103,4 +104,6 @@ public interface JpaConst {
     String Q_CHE_COUNT_ALL_MINE = ENTITY_CHE + ".countAllMine";
     String Q_CHE_COUNT_ALL_MINE_DEF = "SELECT COUNT(c) FROM Check AS c WHERE c.report = :" + JPQL_PARM_REPORT;
 
+=======
+>>>>>>> 6cf8195 定数ファイルを作成
 }

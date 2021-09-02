@@ -162,3 +162,24 @@ pre {
 h3 {
     font-size: larger;
 }
+
+table#check_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#check_list .check_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#check_list .check_date {
+    width: 20%;
+}
+
+table#check_list .check_title {
+    width: 37%;
+}
+
+table#check_list .check_action {
+    width: 13%;
+}

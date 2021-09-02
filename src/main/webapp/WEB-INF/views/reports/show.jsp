@@ -48,7 +48,14 @@
         </c:if>
 
         <p>
+            <a href="<c:url value='?action=${actChe}&command=${commEdt}&id=${check.id}' />">この日報を確認する</a>
+        </p>
+
+        <p>
             <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a>
         </p>
+
+
+
     </c:param>
 </c:import>
