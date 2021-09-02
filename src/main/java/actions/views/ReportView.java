@@ -53,9 +53,4 @@ public class ReportView {
      */
     private LocalDateTime updatedAt;
 
-    /**
-     * 評価
-     */
-    private String review;
-
 }
