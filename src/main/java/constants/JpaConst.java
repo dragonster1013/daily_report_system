@@ -45,8 +45,6 @@ public interface JpaConst {
     //評価テーブルカラム
     String REV_COL_ID = "id"; //id
     String REV_COL_CONTENT = "content"; //評価の内容
-    String REV_COL_CREATED_AT = "created_at"; //登録日時
-    String REV_COL_UPDATED_AT = "updated_at"; //更新日時
 
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
