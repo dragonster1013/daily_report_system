@@ -5,8 +5,10 @@
 <%@ page import="constants.ForwardConst" %>
 
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
+<c:set var="actRev" value="${ForwardConst.ACT_REV.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commEdt" value="${ForwardConst.CMD_EDIT.getValue()}" />
+<c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
     <c:param name="content">
@@ -52,7 +54,7 @@
         </c:if>
 
         <p>
-            日報の評価
+            <a href="<c:url value='?action=${actRev}&command=${commNew}' />">日報の評価</a>
         </p>
 
         <p>
