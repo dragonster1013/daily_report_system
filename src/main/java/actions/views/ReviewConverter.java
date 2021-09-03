@@ -9,7 +9,7 @@ import models.Review;
  * 評価データのDTOモデル⇔Viewモデルの変換を行うクラス
  *
  */
-public class RevieView {
+public class ReviewConverter {
 
     /**
      * ViewモデルのインスタンスからDTOモデルのインスタンスを作成する
