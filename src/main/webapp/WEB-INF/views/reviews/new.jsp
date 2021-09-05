@@ -7,6 +7,7 @@
 <c:set var="commCrt" value="${ForwardConst.CMD_CREATE.getValue()}" />
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
 <c:set var="commShow" value="${ForwardConst.CMD_SHOW.getValue()}" />
+<c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 
 
 <c:import url="/WEB-INF/views/layout/app.jsp">
@@ -17,7 +18,7 @@
             <c:import url="_form.jsp" />
         </form>
 
-        <p><a href="<c:url value='?action=${actRep}&command=${commShow}&id=${report.id}' />">日報 詳細に戻る</a></p>
+        <p><a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a></p>
 
     </c:param>
 </c:import>

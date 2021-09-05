@@ -42,7 +42,7 @@
                 </tr>
                 <tr>
                     <th>評価</th>
-                    <td></td>
+                    <td><c:out value="${review.content}" /></td>
                 </tr>
             </tbody>
         </table>
@@ -53,9 +53,9 @@
             </p>
         </c:if>
 
-        <p>
-            <a href="<c:url value='?action=${actRev}&command=${commNew}' />">日報の評価</a>
-        </p>
+            <p>
+                <a href="<c:url value='?action=${actRev}&command=${commNew}' />">日報の評価</a>
+            </p>
 
         <p>
             <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a>

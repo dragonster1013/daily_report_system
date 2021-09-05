@@ -35,7 +35,7 @@ public class ReviewValidator {
      */
     private static String validateContent(String content) {
         if (content == null || content.equals("")) {
-            return MessageConst.E_NOCONTENT.getMessage();
+            return MessageConst.E_REVIEW_FAILURE.getMessage();
         }
 
         //入力値がある場合は空文字を返却
