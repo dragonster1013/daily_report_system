@@ -12,6 +12,6 @@
 
 <input type="hidden" name="${AttributeConst.REV_CONTENT.getValue()}" value="確認しました" />
 <button type="submit">確認しました</button>
-
+<br /><br />
 <input type="hidden" name="${AttributeConst.REV_CONTENT.getValue()}" value="再提出してください" />
 <button type="submit">再提出してください</button>

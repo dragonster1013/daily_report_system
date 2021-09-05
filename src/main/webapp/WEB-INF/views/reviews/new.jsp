@@ -19,6 +19,5 @@
         </form>
 
         <p><a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a></p>
-
     </c:param>
 </c:import>
