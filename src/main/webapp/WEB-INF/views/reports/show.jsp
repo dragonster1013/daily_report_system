@@ -5,7 +5,7 @@
 <%@ page import="constants.ForwardConst" %>
 
 <c:set var="actRep" value="${ForwardConst.ACT_REP.getValue()}" />
-<c:set var="actRev" value="${ForwardConst.ACT_REV.getValue()}" />
+<c:set var="actChe" value="${ForwardConst.ACT_CHE.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 <c:set var="commEdt" value="${ForwardConst.CMD_EDIT.getValue()}" />
 <c:set var="commNew" value="${ForwardConst.CMD_NEW.getValue()}" />
@@ -40,7 +40,10 @@
                     <fmt:parseDate value="${report.updatedAt}" pattern="yyyy-MM-dd'T'HH:mm:ss" var="updateDay" type="date" />
                     <td><fmt:formatDate value="${updateDay}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 </tr>
-
+                <tr>
+                    <th>評価</th>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
 
@@ -51,8 +54,11 @@
         </c:if>
 
         <p>
-            <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a>
+            <a href="<c:url value='?action=${actChe}&command=${commNew}' />">評価をする</a>
         </p>
 
+        <p>
+            <a href="<c:url value='?action=${actRep}&command=${commIdx}' />">一覧に戻る</a>
+        </p>
     </c:param>
 </c:import>
