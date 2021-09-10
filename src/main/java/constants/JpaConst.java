@@ -44,7 +44,7 @@ public interface JpaConst {
     String TABLE_CHE = "check"; //テーブル名
     //評価テーブルカラム
     String CHE_COL_ID = "id"; //id
-    String CHE_COL_REP = "check_id"; //評価をした日報
+    String CHE_COL_REP = "report_id"; //評価をした日報のid
     String CHE_COL_CONTENT = "content"; //評価の内容
 
     //Entity名

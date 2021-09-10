@@ -19,7 +19,7 @@ public class CheckConverter {
     public static Check toModel(CheckView cv) {
         return new Check(
                 cv.getId(),
-                ReportConverter.toModel(cv.getReport()),
+                cv.getReportId(),
                 cv.getContent());
     }
 
@@ -36,7 +36,7 @@ public class CheckConverter {
 
         return new CheckView(
                 c.getId(),
-                ReportConverter.toView(c.getReport()),
+                c.getReportId(),
                 c.getContent());
     }
 
@@ -62,7 +62,7 @@ public class CheckConverter {
      */
     public static void copyViewToModel(Check c, CheckView cv) {
         c.setId(cv.getId());
-        c.setReport(ReportConverter.toModel(cv.getReport()));
+        c.setReportId(cv.getReportId());
         c.setContent(cv.getContent());
     }
 
@@ -73,7 +73,7 @@ public class CheckConverter {
      */
     public static void copyModelToView(Check c, CheckView cv) {
         cv.setId(c.getId());
-        cv.setReport(ReportConverter.toView(c.getReport()));
+        cv.setReportId(c.getReportId());
     }
 
 }

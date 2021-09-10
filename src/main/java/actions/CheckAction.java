@@ -6,7 +6,6 @@ import java.util.List;
 import javax.servlet.ServletException;
 
 import actions.views.CheckView;
-import actions.views.ReportView;
 import constants.AttributeConst;
 import constants.ForwardConst;
 import constants.MessageConst;
@@ -54,13 +53,13 @@ public class CheckAction extends ActionBase {
      */
     public void create() throws ServletException, IOException {
 
-        //セッションからアクセス中の日報IDを取得
-        ReportView rv = (ReportView) getSessionScope(AttributeConst.REP_ID);
+        //日報のIDを取得
+        int ri = toNumber(getRequestParam(AttributeConst.REP_ID));
 
         //パラメータの値をもとに評価情報のインスタンスを作成する
         CheckView cv = new CheckView(
                 null,
-                rv,
+                ri,
                 getRequestParam(AttributeConst.CHE_CONTENT));
 
         //評価情報登録
@@ -85,5 +84,4 @@ public class CheckAction extends ActionBase {
             redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
         }
     }
-
 }

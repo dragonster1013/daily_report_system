@@ -15,6 +15,6 @@
             <c:import url="_form.jsp" />
         </form>
 
-            <a href="<c:url value='?action=Report&command=index' />">一覧に戻る</a>
+        <p><a href="<c:url value='?action=Report&command=index' />">一覧に戻る</a></p>
     </c:param>
 </c:import>

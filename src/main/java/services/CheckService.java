@@ -19,8 +19,8 @@ public class CheckService extends ServiceBase {
     }
 
     /**
-     * 画面から入力された日報の登録内容を元にデータを1件作成し、日報テーブルに登録する
-     * @param rv 日報の登録内容
+     * 画面から入力された評価の登録内容を元にデータを1件作成し、評価テーブルに登録する
+     * @param cv 評価の登録内容
      * @return バリデーションで発生したエラーのリスト
      */
     public List<String> create(CheckView cv) {
@@ -34,8 +34,8 @@ public class CheckService extends ServiceBase {
     }
 
     /**
-     * 画面から入力された日報の登録内容を元に、日報データを更新する
-     * @param rv 日報の更新内容
+     * 画面から入力された評価の登録内容を元に、評価データを更新する
+     * @param cv の更新内容
      * @return バリデーションで発生したエラーのリスト
      */
     public List<String> update(CheckView cv) {
@@ -63,7 +63,7 @@ public class CheckService extends ServiceBase {
 
     /**
      * 評価データを1件登録する
-     * @param rv 日報データ
+     * @param cv 評価データ
      */
     private void createInternal(CheckView cv) {
 
@@ -74,8 +74,8 @@ public class CheckService extends ServiceBase {
     }
 
     /**
-     * 日報データを更新する
-     * @param rv 日報データ
+     * 評価データを更新する
+     * @param cv 評価データ
      */
     private void updateInternal(CheckView cv) {
 

@@ -21,9 +21,9 @@ public class CheckView {
     private Integer id;
 
     /**
-     * 評価をした日報
+     * 評価をした日報id
      */
-    private ReportView report;
+    private Integer reportId;
 
     /**
      * 評価の内容

@@ -5,9 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import constants.JpaConst;
@@ -28,7 +26,7 @@ import lombok.Setter;
 @AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
 @Entity
 public class Check {
-    
+
     /**
      * id
      */
@@ -36,14 +34,13 @@ public class Check {
     @Column(name = JpaConst.CHE_COL_ID)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
+
     /**
-     * 評価をした日報
+     * 評価をした日報のID
      */
-    @ManyToOne
-    @JoinColumn(name = JpaConst.CHE_COL_REP, nullable = false)
-    private Report report;
-    
+    @Column(name = JpaConst.CHE_COL_REP, nullable = false)
+    private Integer reportId;
+
     /**
      * 日報の内容
      */

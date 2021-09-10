@@ -52,6 +52,7 @@ public enum AttributeConst {
     CHECK("check"),
     CHECKS("checks"),
     CHE_ID("id"),
+    CHE_REP("report_id"),
     CHE_CONTENT("content");
 
     private final String text;

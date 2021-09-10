@@ -54,7 +54,7 @@
         </c:if>
 
         <p>
-            <a href="<c:url value='?action=${actChe}&command=${commNew}' />">評価をする</a>
+            <a href="<c:url value='?action=${actChe}&command=${commNew}&id=${report.id}' />">評価をする</a>
         </p>
 
         <p>
