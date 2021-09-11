@@ -39,6 +39,10 @@ public class CheckAction extends ActionBase {
      */
     public void entryNew() throws ServletException, IOException {
 
+        //日報のIDを取得
+        int report_id = toNumber(getRequestParam(AttributeConst.REP_ID));
+
+        putRequestScope(AttributeConst.CHE_REP, report_id);
         putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
 
         //新規登録画面を表示
@@ -54,12 +58,15 @@ public class CheckAction extends ActionBase {
     public void create() throws ServletException, IOException {
 
         //日報のIDを取得
-        int ri = toNumber(getRequestParam(AttributeConst.REP_ID));
+        int report_id = toNumber(getRequestParam(AttributeConst.REP_ID));
+
+        //CSRF対策 tokenのチェック
+        if (checkToken()) {
 
         //パラメータの値をもとに評価情報のインスタンスを作成する
         CheckView cv = new CheckView(
                 null,
-                ri,
+                report_id,
                 getRequestParam(AttributeConst.CHE_CONTENT));
 
         //評価情報登録
@@ -68,6 +75,7 @@ public class CheckAction extends ActionBase {
         if (errors.size() > 0) {
             //登録中にエラーがあった場合
 
+            putRequestScope(AttributeConst.TOKEN, getTokenId()); //CSRF対策用トークン
             putRequestScope(AttributeConst.CHECK, cv);//入力された評価情報
             putRequestScope(AttributeConst.ERR, errors);//エラーのリスト
 
@@ -83,5 +91,7 @@ public class CheckAction extends ActionBase {
             //一覧画面にリダイレクト
             redirect(ForwardConst.ACT_REP, ForwardConst.CMD_INDEX);
         }
+    }
+
     }
 }

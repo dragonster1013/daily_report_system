@@ -14,6 +14,6 @@
 <textarea name="${AttributeConst.CHE_CONTENT.getValue()}" rows="10" cols="50">${check.content}</textarea>
 <br /><br />
 <input type="hidden" name="${AttributeConst.CHE_ID.getValue()}" value="${check.id}" />
-<input type="hidden" name="${AttributeConst.REP_ID.getValue()}" value="${check.reportId}" />
+<input type="hidden" name="${AttributeConst.CHE_REP.getValue()}" value="${report_id}" />
 <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
 <button type="submit">投稿</button>

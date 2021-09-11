@@ -41,7 +41,7 @@ public interface JpaConst {
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
     //評価テーブル
-    String TABLE_CHE = "check"; //テーブル名
+    String TABLE_CHE = "checks"; //テーブル名
     //評価テーブルカラム
     String CHE_COL_ID = "id"; //id
     String CHE_COL_REP = "report_id"; //評価をした日報のid
