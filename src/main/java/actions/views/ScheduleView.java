@@ -1,19 +1,22 @@
 package actions.views;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
- * 評価情報について画面の入力値・出力値を扱うViewモデル
+ * 予定表情報について画面の入力値・出力値を扱うViewモデル
  *
  */
 @Getter //全てのクラスフィールドについてgetterを自動生成する(Lombok)
 @Setter //全てのクラスフィールドについてsetterを自動生成する(Lombok)
 @NoArgsConstructor //引数なしコンストラクタを自動生成する(Lombok)
 @AllArgsConstructor //全てのクラスフィールドを引数にもつ引数ありコンストラクタを自動生成する(Lombok)
-public class CheckView {
+public class ScheduleView {
 
     /**
      * id
@@ -21,13 +24,33 @@ public class CheckView {
     private Integer id;
 
     /**
-     * 評価をした日報id
+     * 予定表を登録した従業員
      */
-    private Integer reportId;
+    private EmployeeView employee;
 
     /**
-     * 評価の内容
+     * いつの予定表かを示す日付
+     */
+    private LocalDate ScheduleDate;
+
+    /**
+     * 予定表のタイトル
+     */
+    private String title;
+
+    /**
+     * 予定表の内容
      */
     private String content;
+
+    /**
+     * 登録日時
+     */
+    private LocalDateTime createdAt;
+
+    /**
+     * 更新日時
+     */
+    private LocalDateTime updatedAt;
 
 }

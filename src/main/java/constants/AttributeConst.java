@@ -49,11 +49,15 @@ public enum AttributeConst {
     REP_DATE("report_date"),
     REP_TITLE("title"),
     REP_CONTENT("content"),
-    CHECK("check"),
-    CHECKS("checks"),
-    CHE_ID("id"),
-    CHE_REP("report_id"),
-    CHE_CONTENT("content");
+
+    //日報管理
+    SCHEDULE("schedule"),
+    SCHEDULES("schedules"),
+    SCHE_COUNT("schedules_count"),
+    SCHE_ID("id"),
+    SCHE_DATE("schedule_date"),
+    SCHE_TITLE("title"),
+    SCHE_CONTENT("content");
 
     private final String text;
     private final Integer i;

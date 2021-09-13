@@ -155,6 +155,27 @@ table#report_list .report_action {
     width: 13%;
 }
 
+table#schedule_list th {
+    font-weight: bold;
+    padding: 10px 2%;
+}
+
+table#schedule_list .schedule_name {
+    width: 20%;
+    padding: 10px 2%;
+}
+table#schedule_list .schedule_date {
+    width: 20%;
+}
+
+table#schedule_list .schedule_title {
+    width: 37%;
+}
+
+table#schedule_list .schedule_action {
+    width: 13%;
+}
+
 pre {
     font-family: "Hiragino Kaku Gothic Pro",Meiryo,"MS PGothic",Helvetica,Arial,sans-serif;
 }

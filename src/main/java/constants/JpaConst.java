@@ -40,17 +40,21 @@ public interface JpaConst {
     String REP_COL_CREATED_AT = "created_at"; //登録日時
     String REP_COL_UPDATED_AT = "updated_at"; //更新日時
 
-    //評価テーブル
-    String TABLE_CHE = "checks"; //テーブル名
-    //評価テーブルカラム
-    String CHE_COL_ID = "id"; //id
-    String CHE_COL_REP = "report_id"; //評価をした日報のid
-    String CHE_COL_CONTENT = "content"; //評価の内容
+    //予定表テーブル
+    String TABLE_SCHE = "schedules"; //テーブル名
+    //予定表テーブルカラム
+    String SCHE_COL_ID = "id"; //id
+    String SCHE_COL_EMP = "employee_id"; //予定表を作成した従業員のid
+    String SCHE_COL_SCHE_DATE = "schedule_date"; //いつの予定表かを示す日付
+    String SCHE_COL_TITLE = "title"; //予定表のタイトル
+    String SCHE_COL_CONTENT = "content"; //予定表の内容
+    String SCHE_COL_CREATED_AT = "created_at"; //登録日時
+    String SCHE_COL_UPDATED_AT = "updated_at"; //更新日時
 
     //Entity名
     String ENTITY_EMP = "employee"; //従業員
     String ENTITY_REP = "report"; //日報
-    String ENTITY_CHE = "check"; //評価
+    String ENTITY_SCHE = "schedule"; //予定表
 
     //JPQL内パラメータ
     String JPQL_PARM_CODE = "code"; //社員番号
@@ -83,5 +87,18 @@ public interface JpaConst {
     //指定した従業員が作成した日報の件数を取得する
     String Q_REP_COUNT_ALL_MINE = ENTITY_REP + ".countAllMine";
     String Q_REP_COUNT_ALL_MINE_DEF = "SELECT COUNT(r) FROM Report AS r WHERE r.employee = :" + JPQL_PARM_EMPLOYEE;
+
+    //全ての予定表をidの降順に取得する
+    String Q_SCHE_GET_ALL = ENTITY_SCHE + ".getAll";
+    String Q_SCHE_GET_ALL_DEF = "SELECT s FROM Schedule AS s ORDER BY s.id DESC";
+    //全ての予定表の件数を取得する
+    String Q_SCHE_COUNT = ENTITY_SCHE + ".count";
+    String Q_SCHE_COUNT_DEF = "SELECT COUNT(s) FROM Schedule AS s";
+    //指定した従業員が作成した予定表を全件idの降順で取得する
+    String Q_SCHE_GET_ALL_MINE = ENTITY_SCHE + ".getAllMine";
+    String Q_SCHE_GET_ALL_MINE_DEF = "SELECT s FROM Schedule AS s WHERE s.employee = :" + JPQL_PARM_EMPLOYEE + " ORDER BY s.id DESC";
+    //指定した従業員が作成した予定表の件数を取得する
+    String Q_SCHE_COUNT_ALL_MINE = ENTITY_SCHE + ".countAllMine";
+    String Q_SCHE_COUNT_ALL_MINE_DEF = "SELECT COUNT(s) FROM Schedule AS s WHERE s.employee = :" + JPQL_PARM_EMPLOYEE;
 
 }
