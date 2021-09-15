@@ -236,4 +236,26 @@ public class ScheduleAction extends ActionBase {
         }
     }
 
+    /**
+     * 削除する
+     * @throws ServletException
+     * @throws IOException
+     */
+    public void destroy() throws ServletException, IOException {
+
+        //CSRF対策 tokenのチェック
+        if (checkToken()) {
+
+            //idを条件に予定表を削除する
+            service.destroy(toNumber(getRequestParam(AttributeConst.SCHE_ID)));
+
+            //セッションに削除完了のフラッシュメッセージを設定
+            putSessionScope(AttributeConst.FLUSH, MessageConst.I_DELETED.getMessage());
+
+            //一覧画面にリダイレクト
+            redirect(ForwardConst.ACT_SCHE, ForwardConst.CMD_INDEX);
+
+        }
+    }
+
 }

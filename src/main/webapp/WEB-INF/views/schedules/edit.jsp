@@ -18,5 +18,20 @@
         <p>
             <a href="<c:url value='?action=Schedule&command=index' />">一覧に戻る</a>
         </p>
+
+        <p>
+            <a href="#" onclick="confirmDestroy();">この予定表を削除する</a>
+        </p>
+        <form method="POST" action="<c:url value='?action=${actSche}&command=${commDel}' />">
+            <input type="hidden" name="${AttributeConst.SCHE_ID.getValue()}" value="${schedule.id}" />
+            <input type="hidden" name="${AttributeConst.TOKEN.getValue()}" value="${_token}" />
+        </form>
+        <script>
+            function confirmDestroy() {
+                if (confirm("本当に削除してよろしいですか？")) {
+                    document.forms[1].submit();
+                }
+            }
+        </script>
     </c:param>
 </c:import>

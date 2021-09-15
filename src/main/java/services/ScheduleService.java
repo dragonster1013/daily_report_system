@@ -154,4 +154,17 @@ public class ScheduleService extends ServiceBase {
 
     }
 
+    /**
+     * 予定表データを削除する
+     * @param sv 予定表データ
+     */
+    public void destroy(int id) {
+
+        em.getTransaction().begin();
+        Schedule s = findOneInternal(id);
+        em.remove(s);
+        em.getTransaction().commit();
+
+    }
+
 }
